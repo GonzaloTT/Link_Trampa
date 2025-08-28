@@ -2,12 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-<body>
-  <h1>⚠️ Has caído en un ejercicio de phishing</h1>
-  <p>Este es un simulacro de ciberseguridad. Si esto hubiera sido real, tus datos podrían estar comprometidos.</p>
-  <p><strong>Recomendaciones:</strong> Nunca abras enlaces sospechosos, verifica el remitente y consulta al área de TI.</p>
+  <title>Simulación de Phishing</title>
+  <link rel="stylesheet" href="./blocks/page.css">
+</head>
+<body class="page">
+  <main class="phishing">
+    <div class="phishing__card">
+      <h1 class="phishing__title">
+        ⚠️ Has caído en un ejercicio de phishing
+      </h1>
+      <p class="phishing__text">
+        Este es un <strong>simulacro de ciberseguridad</strong>.  
+        Si esto hubiera sido real, tus datos podrían estar comprometidos.
+      </p>
+      <p class="phishing__recommendation">
+        <span class="phishing__recommendation-label">Recomendaciones:</span>  
+        Nunca abras enlaces sospechosos, verifica el remitente y consulta al área de TI.
+      </p>
+    </div>
+  </main>
 
-  <!-- Vincular el archivo JS -->
-  <script type="module" src="scripts/index.js"></script>
+  <!-- Cargar librería Supabase y tu JS -->
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  <script src="scripts/index.js"></script>
 </body>
 </html>
