@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Simulación de Phishing</title>
-  <link rel="stylesheet" href="./blocks/page.css">
-</head>
-<body class="page">
-  <main class="phishing">
-    <div class="phishing__card">
-      <h1 class="phishing__title">
-        ⚠️ Has caído en un ejercicio de phishing
-      </h1>
-      <p class="phishing__text">
-        Este es un <strong>simulacro de ciberseguridad</strong>.
-        Si esto hubiera sido real, tus datos podrían estar comprometidos.
-      </p>
-      <p class="phishing__recommendation">
-        <span class="phishing__recommendation-label">Recomendaciones:</span>
-        Nunca abras enlaces sospechosos, verifica el remitente y consulta al área de TI.
-      </p>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simulación de Phishing</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="page">
+    <main class="phishing">
+      <div class="phishing__card">
+        <h1 class="phishing__title">⚠️ Simulación de Phishing</h1>
 
-     <section class="phishing__info">
-        <h2 class="phishing__info-title">¿Qué es el phishing?</h2>
-        <p class="phishing__info-text">
-          El <strong>phishing</strong> es una técnica utilizada por ciberdelincuentes para engañarte y obtener tus datos personales mediante correos o enlaces fraudulentos.
+        <p class="phishing__alert">
+          Has hecho clic en un enlace <strong>potencialmente malicioso</strong>.
+          Por suerte, esto es solo un
+          <strong>ejercicio de concienciación</strong>.
         </p>
-        <h3 class="phishing__info-subtitle">Cómo reconocerlo:</h3>
-        <ul class="phishing__list">
-          <li class="phishing__list-item">Correos con <strong>urgencia excesiva</strong> o amenazas.</li>
-          <li class="phishing__list-item">Direcciones de correo o enlaces <strong>sospechosos</strong>.</li>
-          <li class="phishing__list-item">Errores de <strong>ortografía o formato</strong>.</li>
-          <li class="phishing__list-item">Solicitudes de <strong>información sensible</strong>.</li>
-        </ul>
-      </section>
 
-      <div class="phishing__actions">
-        <a href="#" target="_blank" class="phishing__button">
-          Aprender más sobre ciberseguridad
-        </a>
+        <section class="phishing__recommendation">
+          <h2 class="phishing__recommendation-title">
+            🔒 Recomendaciones clave
+          </h2>
+          <ul class="phishing__recommendation-list">
+            <li class="phishing__recommendation-item">
+              Verifica siempre el <strong>remitente</strong> del correo.
+            </li>
+            <li class="phishing__recommendation-item">
+              No abras enlaces con <strong>mensajes alarmistas</strong>.
+            </li>
+            <li class="phishing__recommendation-item">
+              Revisa la <strong>URL real</strong> antes de hacer clic.
+            </li>
+            <li class="phishing__recommendation-item">
+              Nunca compartas <strong>datos sensibles</strong> por correo.
+            </li>
+          </ul>
+        </section>
+
+        <section class="phishing__info">
+          <h2 class="phishing__info-title">💡 ¿Qué es el phishing?</h2>
+          <p class="phishing__info-text">
+            El <strong>phishing</strong> es una técnica de fraude en la que los
+            atacantes se hacen pasar por entidades legítimas para robar
+            información personal o credenciales.
+          </p>
+        </section>
+
+        <div class="phishing__actions">
+          <a
+            href="https://www.incibe.es/protege-tu-empresa"
+            target="_blank"
+            class="phishing__button"
+          >
+            Aprender más sobre ciberseguridad
+          </a>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- Cargar librería Supabase y tu JS -->
-  <script src="https://unpkg.com/@supabase/supabase-js"></script>
-  <script src="scripts/index.js"></script>
-</body>
+    <!-- Cargar librería Supabase y tu JS -->
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
 </html>

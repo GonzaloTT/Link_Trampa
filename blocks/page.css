@@ -1,22 +1,22 @@
-/* =============== BASE STYLES =============== */
+/* ========== BASE ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100%;
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f9;
+  font-family: "Roboto", Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
   color: #333;
 }
 
-/* =============== BLOCK: PAGE =============== */
+/* ========== PAGE ========== */
 .page {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  padding: 40px;
 }
