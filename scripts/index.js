@@ -1,35 +1,26 @@
-// Conectar con Supabase
-  const SUPABASE_URL = "https://mmntgtbhzibafsnhyzvk.supabase.co";
-  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1tbnRndGJoemliYWZzbmh5enZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYyMjI1MDEsImV4cCI6MjA3MTc5ODUwMX0.9vfd3tHLJBlqEP7A9SX2fnhGCxtsFX0lnwscPky4xTs";
+import { createClient } from "https://esm.sh/@supabase/supabase-js";
 
-  const { createClient } = supabase;
-  const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// 🔑 Configuración de Supabase
+const supabaseUrl = "https://erapblchgowqamubvxgp.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVyYXBibGNoZ293cWFtdWJ2eGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYzMzc3NjAsImV4cCI6MjA3MTkxMzc2MH0.4GzmMUcmdCZzhz8Yr52gFbCKqFf1WiEVXRadxEzhwwo"; // ⚠️ Usar solo la clave pública
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-  const button = document.querySelector(".button");
+// Extraer correo del query string
+const urlParams = new URLSearchParams(window.location.search);
+const email = urlParams.get("email");
 
-  async function registrarClic() {
-    try {
-      // Obtener navegador y sistema
-      const userAgent = navigator.userAgent;
+if (email) {
+  const saveClick = async () => {
+    const { data, error } = await supabase
+      .from("phishing_clicks")
+      .insert([{ email: email, timestamp: new Date() }]);
 
-      // Obtener IP usando servicio externo
-      const ipResponse = await fetch("https://api.ipify.org?format=json");
-      const ipData = await ipResponse.json();
-
-      // Insertar registro en Supabase
-      const { error } = await db
-        .from("clicks")
-        .insert([{ ip: ipData.ip, user_agent: userAgent }]);
-
-      if (error) {
-        console.error("❌ Error al registrar:", error);
-      } else {
-        alert("🚨 Este fue un simulacro de ciberseguridad. No compartas información en enlaces sospechosos.");
-      }
-    } catch (e) {
-      console.error("❌ Error general:", e);
+    if (error) {
+      console.error("❌ Error guardando:", error);
+    } else {
+      console.log("✅ Click registrado:", data);
     }
-  }
+  };
 
-  // Asignar evento al botón
-  button.addEventListener("click", registrarClic);
+  saveClick();
+}
